@@ -24,9 +24,9 @@ function MobileNavBar({ styles }: { styles: string }) {
               initial={{ x: "300px" }}
               animate={{ x: "0" }}
               exit={{ x: "300px" }}
-              className="absolute top-0 right-0 w-[300px] h-screen shadow bg-white px-6 pt-20 pb-10 text-center flex flex-col justify-between"
+              className="absolute top-0 right-0 w-[300px] h-screen shadow bg-white pt-20 pb-10 text-center flex flex-col justify-between"
             >
-                {/* close nav */}
+              {/* close nav */}
               <button
                 className=" absolute top-5 left-5 text-2xl"
                 onClick={() => setShowNav((i) => !i)}
@@ -34,10 +34,18 @@ function MobileNavBar({ styles }: { styles: string }) {
                 <IoClose />
               </button>
 
-            <NavBar styles="flex flex-col gap-6 text-2xl h-full " />
+              <NavBar styles="flex flex-col gap-6 text-2xl h-full mobile-navbar" />
 
-                        <MyButton styles='' text="Start Your Journey" onClick={()=>console.log("Clicked")} textColor="black" bgColor="var(--main-color)" />
-            
+              <div className="px-4">
+                <MyButton
+                styles="w-full"
+                text="Start Your Journey"
+                onClick={() => console.log("Clicked")}
+                textColor="black"
+                bgColor="var(--main-color)"
+              />
+              </div>
+              
             </motion.nav>
           </div>
         )}
