@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer utilities {
+    .centralize-content {
+        @apply flex justify-center items-center
+    }
+}
+
+:root {
+    --main-color: #fccd05;
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+}
