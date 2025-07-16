@@ -1,13 +1,38 @@
+"use client"
 import Link from 'next/link'
 import React from 'react'
+import { motion } from 'framer-motion';
 
-function NavBar() {
+interface navLinksTypes {
+  name: string;
+  link: string;
+}
+
+export const navLinks:navLinksTypes[] = [
+  {
+  name: 'Home',
+  link: '#'
+},
+{
+  name: 'Features',
+  link: '#'
+},
+{
+  name: 'About',
+  link: '#'
+},
+{
+  name: 'Contact',
+  link: '#'
+},]
+
+function NavBar({styles}:{styles:string}) {
+
   return (
-    <nav className='centralize-content gap-10 text-lg font-semibold'>
-        <li><Link href={"#"}>Home</Link></li>
-        <li><Link href={"#"}>Features</Link></li>
-        <li><Link href={"#"}>About</Link></li>
-        <li><Link href={"#"}>Contact</Link></li>
+    <nav className={`${styles} lg:centralize-content font-semibold `}>
+      {navLinks.map((ele:navLinksTypes, index:number)=>(
+        <motion.li  whileHover={{scale: 1.1}} transition={{duration: 0.3}} key={index}><Link href={ele.link}>{ele.name}</Link></motion.li>
+      ))}
     </nav>
   )
 }
