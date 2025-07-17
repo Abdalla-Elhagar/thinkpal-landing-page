@@ -1,3 +1,4 @@
+import Comments from "@/components/Comments";
 import Features from "@/components/Features";
 import Hero from "@/components/Hero";
 
@@ -7,7 +8,7 @@ export default function Home() {
       
         <Hero />
         <Features />
-      
+        <Comments />
     </main>
   );
 }

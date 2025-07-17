@@ -1,5 +1,6 @@
-import React, { ReactNode } from 'react'
-interface featuresCardTypes {
+import React, { ReactNode } from 'react';
+
+export interface featuresCardTypes {
   icon: ReactNode;
   title: string;
   desc: string

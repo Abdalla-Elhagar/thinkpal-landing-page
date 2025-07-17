@@ -3,9 +3,9 @@ import SectionTitles from "./SectionTitles";
 import { PiGraduationCap } from "react-icons/pi";
 import { BiBarChart } from "react-icons/bi";
 import { PiRobot } from "react-icons/pi";
-import FeaturesCard from "./FeaturesCard";
+import FeaturesCard, { featuresCardTypes } from "./FeaturesCard";
 
-const featuresCards = [
+const featuresCards:featuresCardTypes[] = [
   {
     icon: <PiGraduationCap />,
     title: "Personalized Learning Roadmaps",
@@ -36,7 +36,7 @@ function Features() {
           {featuresCards.map((card, index) => (
             <div
               key={index}
-              className="card flex justify-start items-center flex-col bg-white shadow py-10 px-5 col-span-1 text-center gap-5 rounded-xl"
+              className="card-style bg-white"
             >
               <FeaturesCard
                 icon={card.icon}
