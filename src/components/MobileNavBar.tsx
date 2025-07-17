@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { IoIosMenu } from "react-icons/io";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoClose } from "react-icons/io5";
@@ -10,6 +10,26 @@ import MyButton from "./MyButton";
 function MobileNavBar({ styles }: { styles: string }) {
   const [showNav, setShowNav] = useState<boolean>(false);
 
+    const excludedRef:any = useRef(null);
+
+  function handleClickOutside(event: { target: any; }) {
+    if (excludedRef.current && !excludedRef.current.contains(event.target)) {
+      setShowNav(false)
+    }
+  }
+
+  useEffect(() => {
+    if (showNav) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [showNav]);
+
   return (
     <div className={`${styles}`}>
       <button aria-label='open menu' className="text-4xl" onClick={() => setShowNav((i) => !i)}>
@@ -17,8 +37,9 @@ function MobileNavBar({ styles }: { styles: string }) {
       </button>
       <AnimatePresence>
         {showNav && (
-          <div className="fixed top-0 right-0 w-screen h-screen bg-black/55">
+          <div onClick={handleClickOutside} className={`fixed top-0 right-0 w-screen h-screen bg-black/55`}>
             <motion.nav
+              ref={excludedRef}
               key="box"
               transition={{ duration: 0.3 }}
               initial={{ x: "300px" }}
