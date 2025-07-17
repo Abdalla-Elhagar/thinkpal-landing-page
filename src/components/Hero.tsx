@@ -8,7 +8,7 @@ function Hero() {
   return (
     <section className="hero">
       <div className="container py-[40px] flex flex-col lg:flex-row justify-center lg:justify-between  items-center min-h-screen gap-10">
-        <div className="text flex flex-col gap-5 w-full md:w-[500px] ">
+        <div className="text text-center lg:text-start  flex flex-col gap-5 w-full md:w-[500px] ">
           <h2 className="text-[30px] md:text-[40px] xl:text-[50px] font-bold">
             Start Smarter with ThinkPal
           </h2>

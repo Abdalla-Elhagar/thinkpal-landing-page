@@ -22,7 +22,7 @@ const data = [
 
 function Social() {
   return (
-    <div className="centralize-content gap-5 text-white text-2xl">
+    <div className="centralize-content gap-2 md:gap-5 text-white text-2xl">
       {data.map((ele, index) => (
         <Link href={ele.path} key={index}>
           {ele.icon}
