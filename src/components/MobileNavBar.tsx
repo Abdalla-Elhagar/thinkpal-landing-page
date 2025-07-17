@@ -12,7 +12,7 @@ function MobileNavBar({ styles }: { styles: string }) {
 
   return (
     <div className={`${styles}`}>
-      <button className="text-4xl" onClick={() => setShowNav((i) => !i)}>
+      <button aria-label='open menu' className="text-4xl" onClick={() => setShowNav((i) => !i)}>
         <IoIosMenu />
       </button>
       <AnimatePresence>
@@ -28,6 +28,7 @@ function MobileNavBar({ styles }: { styles: string }) {
             >
               {/* close nav */}
               <button
+              aria-label='close menu'
                 className=" absolute top-5 left-5 text-2xl"
                 onClick={() => setShowNav((i) => !i)}
               >

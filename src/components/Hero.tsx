@@ -36,6 +36,7 @@ function Hero() {
         <Image
           src={heroImage}
           alt={"Hero Image"}
+          priority
           className="size-full md:size-[500px] "
         />
       </div>

@@ -31,7 +31,7 @@ function NavBar({styles}:{styles:string}) {
   return (
     <nav className={`${styles} lg:centralize-content font-semibold `}>
       {navLinks.map((ele:navLinksTypes, index:number)=>(
-        <motion.li  whileHover={{scale: 1.03}} transition={{duration: 0.3}} key={index}><Link href={ele.link}>{ele.name}</Link></motion.li>
+        <motion.li  whileHover={{scale: 1.03}} transition={{duration: 0.3}} key={index}><Link aria-label={ele.name} href={ele.link}>{ele.name}</Link></motion.li>
       ))}
     </nav>
   )
